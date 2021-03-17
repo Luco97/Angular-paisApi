@@ -1,0 +1,51 @@
+<h2>Por Pais</h2>
+<hr />
+
+<div class="row">
+  <div class="col">
+    <app-pais-input (pais)="buscar_pais($event)"
+                    (posibles)="sugerencias($event)"
+                    [EstoEsUnInput]="tipo"></app-pais-input>
+  </div>
+</div>
+<hr />
+
+<div class="alert alert-danger" ng *ngIf="hayError">
+  No existe pais de nombre: {{ termino }}
+</div>
+
+<div *ngIf="!hayError">
+  <div class="row">
+    <div class="col">
+
+        <!-- Forma 1 -->
+        <app-pais-tabla [listado]="paises"></app-pais-tabla>
+        
+        
+        <!--
+      <table class="table table-hover" >
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Bandera</th>
+            <th>Nombre</th>
+            <th>Poblacion</th>
+            <th>Ver mas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pais of paises; let i=index">
+            <td>{{ i + 1 }}</td>
+            <td><img src="{{ pais.flag }}" class="small-flag"></td>
+            <td>{{ pais.name }}</td>
+            <td>{{ pais.population |number}}</td>
+            <td>
+                <a [routerLink]="[ '/pais', pais.alpha2Code ]"><button>+</button></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      -->
+    </div>
+  </div>
+</div>
