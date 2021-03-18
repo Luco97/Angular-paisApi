@@ -1,1 +1,16 @@
-<p>por-region works!</p>
+<h2>Por Region: {{ regionActiva|titlecase}}</h2>
+<hr/>
+
+<div class="row">
+    <div class="col">
+        <button *ngFor="let region of regiones"
+                [class]="(region == regionActiva) ? 'btn btn-primary':'btn btn-secondary'"
+                (click)="activarRegion(region)">{{ region|titlecase}}</button>
+    </div><!--  Para hacer lo mismo y agregar diferentes colores
+                [class]="(region == regionActiva) ? 'btn-primary':'btn-secondary'"-->
+             <!--   [class.active]="regionActiva == region" 
+                    Si regionActiva es == a la region, retorna true y se 
+                    agrega 'active' a class="btn btn-primary"-->
+</div>
+<hr>
+<app-pais-tabla [listado]="paises"></app-pais-tabla>
