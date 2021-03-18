@@ -11,7 +11,7 @@ export class PorPaisComponent {
 
   termino: string = '';
   hayError: boolean = false;
-  tipo: string = 'Buscar por pais';
+  tipo: string = 'Buscar por pais...';
   paises: Country[] = []
 
   constructor(private paisService: PaisService) { }

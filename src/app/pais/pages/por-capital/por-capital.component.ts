@@ -12,7 +12,7 @@ export class PorCapitalComponent {
 
   termino: string = '';
   hayError: boolean = false;
-  tipo: string = 'Buscar por capital';
+  tipo: string = 'Buscar por capital...';
   capitales: Country[] = [];
 
   constructor(private paisService: PaisService) { }
