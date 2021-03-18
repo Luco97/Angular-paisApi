@@ -20,3 +20,7 @@ button {
   button:focus{ 
     outline: none;
   }
+
+  li {
+    cursor: pointer;
+  }

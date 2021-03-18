@@ -8,6 +8,17 @@
                     [EstoEsUnInput]="tipo"></app-pais-input>
   </div>
 </div>
+<!-- SUGERENCIAS Y SOLO ESO XD-->
+<ul class="list-group" 
+    *ngIf="paisesSugerencia.length>0">
+  <li class="list-group-item list-group-item-action"
+      *ngFor="let sugerencia of paisesSugerencia">
+      <a [routerLink]="[ '/pais', sugerencia.alpha2Code]"
+          class="nav-link">
+        {{sugerencia.name}}
+      </a>
+  </li>
+</ul>
 <hr />
 
 <div class="alert alert-danger" ng *ngIf="hayError">
